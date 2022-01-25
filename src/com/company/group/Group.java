@@ -53,20 +53,6 @@ public class Group {
         this.teacher = teacher;
     }
 
-    public List<Student> addStudentToGroup(Student student) {
-        studentList.add(student);
-        return getStudentList();
-    }
-
-    public List<Student> removeStudentFromGroup(Student student) {
-        studentList.remove(student);
-        return getStudentList();
-    }
-
-    public void changeTeacher(Teacher newTeacher) {
-        setTeacher(newTeacher);
-    }
-
     @Override
     public String toString() {
         return new StringJoiner(", ", Group.class.getSimpleName() + "[", "]")

@@ -16,13 +16,13 @@ public class Address {
         this.flatNumber = flatNumber;
     }
 
-//    @Override
-//    public String toString() {
-//        return new StringJoiner(", ", Address.class.getSimpleName() + "[", "]")
-//                .add("city='" + city + "'")
-//                .add("street='" + street + "'")
-//                .add("houseNumber=" + houseNumber)
-//                .add("flatNumber=" + flatNumber)
-//                .toString();
-//    }
+    @Override
+    public String toString() {
+        return new StringJoiner(", ", Address.class.getSimpleName() + "[", "]")
+                .add("city='" + city + "'")
+                .add("street='" + street + "'")
+                .add("houseNumber=" + houseNumber)
+                .add("flatNumber=" + flatNumber)
+                .toString();
+    }
 }

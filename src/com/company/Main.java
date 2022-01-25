@@ -3,6 +3,8 @@ package com.company;
 import com.company.group.Group;
 import com.company.persons.Student;
 import com.company.persons.Teacher;
+import com.company.group.servises.GroupServiceImpl;
+import com.company.group.servises.GroupServise;
 
 public class Main {
 
@@ -16,17 +18,21 @@ public class Main {
 
         Group group = new Group("Toliki",3,new Teacher("Mari","Spiridonova",34,new Address("Grodno","Limoj",24,30),1207));
 
-        group.addStudentToGroup(student1);
-        group.addStudentToGroup(student2);
-        group.addStudentToGroup(student3);
-        group.addStudentToGroup(student4);
-        group.addStudentToGroup(student5);
+        GroupServise groupServise = new GroupServiceImpl();
+        ((GroupServiceImpl) groupServise).init(group);
+        groupServise.addStudentToGroup(student1);
+        groupServise.addStudentToGroup(student2);
+        groupServise.addStudentToGroup(student3);
+        groupServise.addStudentToGroup(student4);
+        groupServise.addStudentToGroup(student5);
 
         System.out.println(group.getStudentList());
+        groupServise.changeTeacher(new Teacher("Ann" , "Spiridonova", 28,new Address("Minsk","Mira" ,24,24),1500));
         System.out.println(group.getTeacher());
 
-        System.out.println(group.removeStudentFromGroup(student1));
-        System.out.println(group.getTeacher().getTeacherSalary());
+
+
+
     }
 
 }
