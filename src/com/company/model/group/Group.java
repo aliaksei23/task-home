@@ -1,7 +1,7 @@
-package com.company.group;
+package com.company.model.group;
 
-import com.company.persons.Student;
-import com.company.persons.Teacher;
+import com.company.model.persons.Student;
+import com.company.model.persons.Teacher;
 
 import java.util.ArrayList;
 import java.util.List;

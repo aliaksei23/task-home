@@ -1,4 +1,4 @@
-package com.company;
+package com.company.model.address;
 
 import java.util.StringJoiner;
 

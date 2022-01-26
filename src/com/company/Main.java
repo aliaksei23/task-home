@@ -1,10 +1,11 @@
 package com.company;
 
-import com.company.group.Group;
-import com.company.persons.Student;
-import com.company.persons.Teacher;
-import com.company.group.servises.GroupServiceImpl;
-import com.company.group.servises.GroupServise;
+import com.company.model.address.Address;
+import com.company.model.group.Group;
+import com.company.model.persons.Student;
+import com.company.model.persons.Teacher;
+import com.company.sevice.groupService.GroupServiceImpl;
+import com.company.sevice.groupService.GroupServise;
 
 public class Main {
 

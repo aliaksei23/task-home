@@ -1,8 +1,8 @@
-package com.company.group.servises;
+package com.company.sevice.groupService;
 
-import com.company.group.Group;
-import com.company.persons.Student;
-import com.company.persons.Teacher;
+import com.company.model.group.Group;
+import com.company.model.persons.Student;
+import com.company.model.persons.Teacher;
 
 public class GroupServiceImpl implements GroupServise{
 

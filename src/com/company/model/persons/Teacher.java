@@ -1,6 +1,6 @@
-package com.company.persons;
+package com.company.model.persons;
 
-import com.company.Address;
+import com.company.model.address.Address;
 import com.company.Employee;
 
 import java.util.StringJoiner;

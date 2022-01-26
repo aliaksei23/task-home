@@ -1,9 +1,7 @@
-package com.company.group.servises;
+package com.company.sevice.groupService;
 
-import com.company.persons.Student;
-import com.company.persons.Teacher;
-
-import java.util.List;
+import com.company.model.persons.Student;
+import com.company.model.persons.Teacher;
 
 public interface GroupServise {
 
