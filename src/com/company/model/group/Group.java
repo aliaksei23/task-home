@@ -11,12 +11,16 @@ public class Group {
 
     private String groupName;
     private int course;
+    private int yearOfAdmission;
+    private int yearOfEnding;
     private List<Student> studentList;
     private Teacher teacher;
 
-    public Group(String groupName, int course, Teacher teacher) {
+    public Group(String groupName, int course, int yearOfAdmission, int yearOfEnding, Teacher teacher) {
         this.groupName = groupName;
         this.course = course;
+        this.yearOfAdmission = yearOfAdmission;
+        this.yearOfEnding = yearOfEnding;
         this.studentList = new ArrayList<>();
         this.teacher = teacher;
     }
@@ -41,16 +45,20 @@ public class Group {
         return studentList;
     }
 
-    public void setStudentList(List<Student> studentList) {
-        this.studentList = studentList;
-    }
-
     public Teacher getTeacher() {
         return teacher;
     }
 
     public void setTeacher(Teacher teacher) {
         this.teacher = teacher;
+    }
+
+    public int getYearOfAdmission() {
+        return yearOfAdmission;
+    }
+
+    public int getYearOfEnding() {
+        return yearOfEnding;
     }
 
     @Override

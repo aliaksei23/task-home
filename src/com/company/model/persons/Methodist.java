@@ -1,50 +1,54 @@
 package com.company.model.persons;
 
-import com.company.model.address.Address;
 import com.company.Employee;
+import com.company.model.address.Address;
 
+import java.util.List;
 import java.util.StringJoiner;
 
-public class Teacher extends Person implements Employee {
+public class Methodist extends Person implements Employee {
 
+    private List<Teacher> teacherList;
     private double salaryPerYear;
 
-    public Teacher(String name, String surname, int age, String gender, Address address, double salaryPerYear) {
+    public Methodist(String name,
+            String surname,
+            int age,
+            String gender, double salaryPerYear,
+            Address address) {
         super(name, surname, age, gender, address);
         setSalaryPerYear(salaryPerYear);
-        //        this.salaryPerYear = salaryPerYear;
+//        this.salaryPerYear = salaryPerYear;
     }
-
     public double getSalaryPerYear() {
         return salaryPerYear;
     }
 
     public void setSalaryPerYear(double salaryPerYear) {
-        if(salaryPerYear >= 100000) {
+        if(salaryPerYear >= 120000) {
             this.salaryPerYear = salaryPerYear;
         } else {
             System.out.println("minimal salary per year should be 100000");
         }
     }
-
-    public void changeSalary(double newSalary) {
-        setSalaryPerYear(newSalary);
+    public List<Teacher> getTeacherList() {
+        return teacherList;
     }
 
     @Override
     public double monthSalary() {
-        return getSalaryPerYear() / 12;
+        return getSalaryPerYear()/12;
     }
 
     @Override
     public String toString() {
-        return new StringJoiner(", ", Teacher.class.getSimpleName() + "[", "]")
+        return new StringJoiner(", ", Methodist.class.getSimpleName() + "[", "]")
                 .add(getName())
                 .add(getSurname())
                 .add(String.valueOf(getAge()))
-                .add(getGender())
                 .add(String.valueOf(getAddress()))
-                .add("Salary=" + salaryPerYear)
                 .toString();
     }
+
+
 }

@@ -4,7 +4,7 @@ import com.company.model.group.Group;
 import com.company.model.persons.Student;
 import com.company.model.persons.Teacher;
 
-public class GroupServiceImpl implements GroupServise{
+public class GroupServiceImpl implements GroupService {
 
     private Group group;
 

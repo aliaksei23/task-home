@@ -3,7 +3,7 @@ package com.company.sevice.groupService;
 import com.company.model.persons.Student;
 import com.company.model.persons.Teacher;
 
-public interface GroupServise {
+public interface GroupService {
 
     Teacher changeTeacher(Teacher newTeacher);
 
