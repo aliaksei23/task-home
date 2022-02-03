@@ -1,7 +1,9 @@
 package com.company.sevice.workersService;
 
+import com.company.Employee;
 import com.company.model.employee.WorkersRepository;
 import com.company.model.group.Group;
+import com.company.model.persons.Person;
 import com.company.model.persons.Teacher;
 
 import java.util.List;
@@ -13,6 +15,16 @@ public class WorkersServiceImpl implements WorkersService {
 
     public void init(WorkersRepository workersRepository) {
         this.workersRepository = workersRepository;
+    }
+
+    @Override
+    public void addWorker(Employee newEmployee) {
+        workersRepository.getEmpList().add(newEmployee);
+    }
+
+    @Override
+    public void removeWorker(Employee newEmployee) {
+        workersRepository.getEmpList().remove(newEmployee);
     }
 
     @Override
@@ -52,6 +64,15 @@ public class WorkersServiceImpl implements WorkersService {
         return workersRepository.getGroupList()
                 .stream()
                 .filter(g -> g.getYearOfEnding() >= graduationYear1 && g.getYearOfEnding() <= graduationYear2)
+                .collect(Collectors.toList());
+    }
+
+    public List<String> sortBySurname() {
+        return workersRepository.getEmpList()
+                .stream()
+                .filter(t -> t instanceof Person)
+                .map(t -> ((Person) t).getSurname())
+                .sorted()
                 .collect(Collectors.toList());
     }
 }

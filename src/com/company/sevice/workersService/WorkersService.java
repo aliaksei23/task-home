@@ -1,11 +1,16 @@
 package com.company.sevice.workersService;
 
+import com.company.Employee;
 import com.company.model.group.Group;
 import com.company.model.persons.Teacher;
 
 import java.util.List;
 
 public interface WorkersService {
+
+    void addWorker (Employee newEmployee);
+
+    void removeWorker (Employee newEmployee);
 
     public List<Teacher> allTeacher();
 
