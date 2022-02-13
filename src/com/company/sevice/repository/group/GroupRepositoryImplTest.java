@@ -7,6 +7,8 @@ import com.company.repository.GroupRepository;
 import org.junit.Before;
 import org.junit.Test;
 
+import java.util.List;
+
 import static org.junit.Assert.*;
 
 public class GroupRepositoryImplTest {
@@ -43,6 +45,9 @@ public class GroupRepositoryImplTest {
     public void getGroupsByGraduationYears() {
         int start = 2018;
         int end = 2022;
-        assertEquals(group, group);
+        grs.add(group);
+        List<Group> groupsByGraduationYears = grs.getGroupsByGraduationYears(start, end);
+        assertEquals(start, groupsByGraduationYears.get(0).getYearOfAdmission());
+        assertEquals(end, groupsByGraduationYears.get(0).getYearOfEnding());
     }
 }

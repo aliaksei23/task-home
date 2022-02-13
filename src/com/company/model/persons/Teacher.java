@@ -21,13 +21,17 @@ public class Teacher extends Person implements Employee {
     }
 
     public void setSalaryPerYear(double salaryPerYear) {
-        if(salaryPerYear < 100000) {
+        if((getAge() >= 57 && getGender().equalsIgnoreCase("female")) ||
+                (getAge() >= 67 && getGender().equalsIgnoreCase("male"))) {
+            this.salaryPerYear = 0;
+        } else if(salaryPerYear < 100000) {
             try {
                 throw new SalaryException("Min salary per year 100000");
             } catch(SalaryException e) {
                 e.printStackTrace();
             }
         }
+
         this.salaryPerYear = salaryPerYear;
     }
 

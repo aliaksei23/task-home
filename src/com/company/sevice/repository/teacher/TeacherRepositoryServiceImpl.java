@@ -49,8 +49,6 @@ public class TeacherRepositoryServiceImpl implements TeacherRepositoryService {
         return teacherRepository.getTeachers()
                 .stream()
                 .filter(Objects::nonNull)
-                .filter(t -> (t.getGender().equalsIgnoreCase("female") && t.getAge() < 57)
-                        || t.getGender().equalsIgnoreCase("male") && t.getAge() < 67)
                 .filter(t -> t.getSalaryPerYear() >= salary)
                 .collect(Collectors.toList());
     }

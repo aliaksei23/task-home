@@ -22,14 +22,18 @@ public class Methodist extends Person implements Employee {
         super(name, surname, age, gender, address);
         setSalaryPerYear(salaryPerYear);
         this.teacherList = new ArrayList<>();
-
     }
+
     public double getSalaryPerYear() {
         return salaryPerYear;
     }
 
-    public void setSalaryPerYear(double salaryPerYear)  {
-        if(salaryPerYear< 120000) {
+    public void setSalaryPerYear(double salaryPerYear) {
+
+        if((getAge() >= 57 && getGender().equalsIgnoreCase("female")) ||
+                (getAge() >= 67 && getGender().equalsIgnoreCase("male"))) {
+            this.salaryPerYear = 0;
+        } else if(salaryPerYear < 120000) {
             try {
                 throw new SalaryException("Min salary per year 120000");
             } catch(SalaryException e) {
@@ -38,13 +42,14 @@ public class Methodist extends Person implements Employee {
         }
         this.salaryPerYear = salaryPerYear;
     }
+
     public List<Teacher> getTeacherList() {
         return teacherList;
     }
 
     @Override
     public double monthSalary() {
-        return getSalaryPerYear()/12;
+        return getSalaryPerYear() / 12;
     }
 
     @Override
@@ -56,6 +61,4 @@ public class Methodist extends Person implements Employee {
                 .add(String.valueOf(getAddress()))
                 .toString();
     }
-
-
 }
