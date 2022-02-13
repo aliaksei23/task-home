@@ -1,4 +1,4 @@
-package com.company.model.persons;
+package com.company.model.base;
 
 import com.company.model.address.Address;
 
@@ -19,6 +19,14 @@ public abstract class Person {
         this.gender=gender;
         this.address = address;
     }
+
+    public Person(String name, String surname, int age, String gender) {
+        this.name = name;
+        this.surname = surname;
+        this.age = age;
+        this.gender = gender;
+    }
+
 
     public String getName() {
         return name;
@@ -44,9 +52,6 @@ public abstract class Person {
         this.address = address;
     }
 
-//    public void changeAddress(Address newAddress) {
-//        setAddress(newAddress);
-//    }
 
     @Override
     public String toString() {

@@ -1,6 +1,7 @@
 package com.company.model.persons;
 
 import com.company.model.address.Address;
+import com.company.model.base.Person;
 
 import java.util.StringJoiner;
 
@@ -10,7 +11,11 @@ public class Student extends Person {
         super(name, surname, age, gender, address);
     }
 
-        @Override
+    public Student(String name, String surname, int age, String gender) {
+        super(name, surname, age, gender);
+    }
+
+    @Override
     public String toString() {
         return new StringJoiner(", ", Student.class.getSimpleName() + "[", "]")
                 .add(getName())

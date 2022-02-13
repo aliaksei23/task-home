@@ -1,4 +1,4 @@
-package com.company.sevice.methodistService;
+package com.company.sevice.methodist;
 
 import com.company.model.persons.Methodist;
 import com.company.model.persons.Teacher;
@@ -7,6 +7,7 @@ public class MethodistServiceImpl implements MethodistService {
 
     private Methodist methodist;
 
+    @Override
     public void init(Methodist methodist) {
         this.methodist = methodist;
     }

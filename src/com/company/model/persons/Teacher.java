@@ -1,7 +1,9 @@
 package com.company.model.persons;
 
+import com.company.exaption.SalaryException;
 import com.company.model.address.Address;
-import com.company.Employee;
+import com.company.model.base.Employee;
+import com.company.model.base.Person;
 
 import java.util.StringJoiner;
 
@@ -12,7 +14,6 @@ public class Teacher extends Person implements Employee {
     public Teacher(String name, String surname, int age, String gender, Address address, double salaryPerYear) {
         super(name, surname, age, gender, address);
         setSalaryPerYear(salaryPerYear);
-        //        this.salaryPerYear = salaryPerYear;
     }
 
     public double getSalaryPerYear() {
@@ -20,14 +21,17 @@ public class Teacher extends Person implements Employee {
     }
 
     public void setSalaryPerYear(double salaryPerYear) {
-        if(salaryPerYear >= 100000) {
-            this.salaryPerYear = salaryPerYear;
-        } else {
-            System.out.println("minimal salary per year should be 100000");
+        if(salaryPerYear < 100000) {
+            try {
+                throw new SalaryException("Min salary per year 100000");
+            } catch(SalaryException e) {
+                e.printStackTrace();
+            }
         }
+        this.salaryPerYear = salaryPerYear;
     }
 
-    public void changeSalary(double newSalary) {
+    public void changeSalary(double newSalary) throws SalaryException {
         setSalaryPerYear(newSalary);
     }
 
