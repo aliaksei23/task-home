@@ -29,18 +29,19 @@ public class Methodist extends Person implements Employee {
     }
 
     public void setSalaryPerYear(double salaryPerYear) {
-
-        if((getAge() >= 57 && getGender().equalsIgnoreCase("female")) ||
-                (getAge() >= 67 && getGender().equalsIgnoreCase("male"))) {
-            this.salaryPerYear = 0;
-        } else if(salaryPerYear < 120000) {
-            try {
+        try {
+            if((getAge() >= 57 && getGender().equalsIgnoreCase("female")) ||
+                    (getAge() >= 67 && getGender().equalsIgnoreCase("male"))) {
+                this.salaryPerYear = 0;
+            } else if(salaryPerYear < 120000) {
                 throw new SalaryException("Min salary per year 120000");
-            } catch(SalaryException e) {
-                e.printStackTrace();
             }
+
+            this.salaryPerYear = salaryPerYear;
+
+        } catch(SalaryException e) {
+            e.printStackTrace();
         }
-        this.salaryPerYear = salaryPerYear;
     }
 
     public List<Teacher> getTeacherList() {

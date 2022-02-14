@@ -4,6 +4,7 @@ import com.company.exaption.SalaryException;
 import com.company.model.address.Address;
 import com.company.model.base.Employee;
 import com.company.model.base.Person;
+import com.company.repository.TeacherRepository;
 
 import java.util.StringJoiner;
 
@@ -21,18 +22,18 @@ public class Teacher extends Person implements Employee {
     }
 
     public void setSalaryPerYear(double salaryPerYear) {
-        if((getAge() >= 57 && getGender().equalsIgnoreCase("female")) ||
-                (getAge() >= 67 && getGender().equalsIgnoreCase("male"))) {
-            this.salaryPerYear = 0;
-        } else if(salaryPerYear < 100000) {
-            try {
+        try {
+            if((getAge() >= 57 && getGender().equalsIgnoreCase("female")) ||
+                    (getAge() >= 67 && getGender().equalsIgnoreCase("male"))) {
+                this.salaryPerYear = 0;
+            } else if(salaryPerYear < 100000) {
                 throw new SalaryException("Min salary per year 100000");
-            } catch(SalaryException e) {
-                e.printStackTrace();
             }
-        }
+            this.salaryPerYear = salaryPerYear;
 
-        this.salaryPerYear = salaryPerYear;
+        } catch(SalaryException e) {
+            e.printStackTrace();
+        }
     }
 
     public void changeSalary(double newSalary) throws SalaryException {
